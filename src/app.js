@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://transactionalwebappfinal-react.onrender.com",
     methods: ["GET", "POST"],
   })
 );
@@ -64,7 +64,6 @@ const userSchema = new mongoose.Schema({
   role: String,
 });
 const User = mongoose.model("User", userSchema);
-
 
 app.post("/signin", async function (req, res) {
   const user = await User.findOne({ email: req.body.email });
